@@ -1,0 +1,52 @@
+$font-text: "Poppins", sans-serif;
+$color-black-primary: #242526;
+$color-black-third: #3a3b3c;
+$color-black-main: #18191a;
+$color-white: #e4e6eb;
+$color-red: #e41e3f;
+$color-purple: #e75fd9;
+$color-green: #31a24c;
+$color-text-sub: #b0b3b8;
+$color-text-text: #4e4f50;
+$color-blue: #2374e1;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: $font-text;
+    font-size: 62.5%;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    background-color: $color-black-main;
+    padding-top: 5.5rem;
+}
+
+.note {
+    position: absolute;
+    top: 5.5rem;
+    left: 50%;
+    white-space: nowrap;
+    transform: translate(-50%, 20%);
+    font-size: 1.4rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    color: $color-black-primary;
+    background-color: $color-white;
+    display: none;
+}
+.note.fit {
+    top: 100%;
+}
+.note.last {
+    left: unset;
+    right: 0;
+    width: fit-content;
+    transform: translate(0, 20%);
+}

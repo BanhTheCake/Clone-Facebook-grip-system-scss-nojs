@@ -479,7 +479,7 @@ body {
 .blog__card-item {
   width: calc(20% - 10px);
   height: 200px;
-  background-image: url(../../img/blog.avif);
+  background-image: url(../img/blog.avif);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

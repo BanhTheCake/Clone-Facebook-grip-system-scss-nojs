@@ -1,17 +1,28 @@
 .blog-container {
     flex-grow: 1;
-    padding: 2rem 3.2rem;
+    padding: 0rem 3.2rem;
+    width: 100vw;
+    @include smobile {
+        padding: 0rem 0rem;
+    }
 }
 
 .blog {
     max-width: 59rem;
     margin: auto;
-    &__card {
-        display: flex;
-        margin-left: -10px;
-        position: relative;
+    @include mobile {
+        padding: 2rem 0;
+    }
+    @include smobile {
+        padding: 2rem 0;
+    }
+    &__box-card {
         margin-bottom: 2rem;
-
+        position: relative;
+        @include smobile {
+            margin-right: 2rem;
+            margin-left: 1rem;
+        }
         &-switch--btn {
             display: inline-flex;
             border-radius: 50%;
@@ -33,8 +44,32 @@
                 }
             }
         }
+    }
+
+    &__card {
+        display: flex;
+        margin-left: -10px;
+        position: relative;
+        width: auto;
+        padding-top: 4px;
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+            width: 1em;
+            height: 0.4rem;
+        }
+
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba($color-text-sub, 0.4);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: rgba($color-text-sub, 0.2);
+        }
         &-item {
-            width: calc(20% - 10px);
+            flex-shrink: 0;
+            // width: calc(20% - 10px);
+            width: 140px;
             height: 200px;
             background-image: url(../img/blog.png);
             background-position: center;
@@ -45,6 +80,7 @@
             cursor: pointer;
             transition: 0.2s;
             position: relative;
+
             &:hover {
                 transform: translateY(-4px);
             }
@@ -111,8 +147,15 @@
                 display: flex;
                 align-items: center;
                 font-size: 1.7rem;
+                line-height: 1.6;
                 color: $color-text-sub;
                 transition: 0.1s;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-word;
                 cursor: pointer;
                 &:hover {
                     background-color: rgba($color-text-sub, 0.3);
@@ -123,14 +166,23 @@
             padding-top: 0.7rem;
             display: flex;
             justify-content: space-between;
+            @include smobile {
+                justify-content: space-around;
+            }
             &-item {
                 padding: 0.7rem 1.2rem;
                 display: flex;
+                white-space: nowrap;
                 align-items: center;
                 color: $color-text-sub;
                 border-radius: 4px;
                 transition: 0.1s;
                 cursor: pointer;
+                @include smobile {
+                    &:last-child {
+                        display: none;
+                    }
+                }
                 & ion-icon {
                     font-size: 3rem;
                     margin-right: 0.8rem;
@@ -255,7 +307,11 @@
                     font-size: 1.4rem;
                     color: $color-white;
                     font-weight: 500;
+                    @include smobile {
+                        font-size: 1.6rem;
+                    }
                 }
+
                 &--date {
                     font-size: 1.3rem;
                     display: flex;

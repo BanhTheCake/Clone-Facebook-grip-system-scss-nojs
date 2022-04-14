@@ -8,11 +8,23 @@
 
 .sidebar__left {
     position: sticky;
-    top: 5.5rem;
+    top: 0rem;
     left: 0;
     height: calc(100vh - 5.5rem);
     width: 280px;
     flex-shrink: 0;
+    @include laptop {
+        display: none;
+    }
+    @include tablet {
+        display: none;
+    }
+    @include mobile {
+        display: none;
+    }
+    @include smobile {
+        display: none;
+    }
     &-list {
         height: 100%;
         padding: 2rem 1.5rem;
@@ -77,11 +89,20 @@
 
 .sidebar__right {
     position: sticky;
-    top: 5.5rem;
+    top: 0;
     right: 0px;
     height: calc(100vh - 5.5rem);
     width: 280px;
     flex-shrink: 0;
+    @include tablet {
+        display: none;
+    }
+    @include mobile {
+        display: none;
+    }
+    @include smobile {
+        display: none;
+    }
     &-wrapper {
         padding: 2rem 1.5rem;
         height: 100%;

@@ -22,10 +22,6 @@ body {
   margin: 0;
 }
 
-.wrapper {
-  overflow-x: hidden;
-}
-
 .note {
   position: absolute;
   top: 5.5rem;
@@ -440,7 +436,7 @@ body {
 
 .sidebar__left {
   position: sticky;
-  top: 0rem;
+  top: 5.5rem;
   left: 0;
   height: calc(100vh - 5.5rem);
   width: 280px;
@@ -527,7 +523,7 @@ body {
 
 .sidebar__right {
   position: sticky;
-  top: 0;
+  top: 5.5rem;
   right: 0px;
   height: calc(100vh - 5.5rem);
   width: 280px;
@@ -657,6 +653,7 @@ body {
   flex-grow: 1;
   padding: 0rem 3.2rem;
   width: 100vw;
+  overflow: hidden;
 }
 @media screen and (max-width: 575.98px) {
   .blog-container {

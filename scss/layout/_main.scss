@@ -2,6 +2,7 @@
     flex-grow: 1;
     padding: 0rem 3.2rem;
     width: 100vw;
+    overflow: hidden;
     @include smobile {
         padding: 0rem 0rem;
     }

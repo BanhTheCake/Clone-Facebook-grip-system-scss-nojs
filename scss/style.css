@@ -365,7 +365,7 @@ body {
 .header__right-img {
   width: 28px;
   height: 28px;
-  margin-right: 1rem;
+  flex-shrink: 0;
 }
 .header__right-img img {
   width: 100%;
@@ -374,11 +374,19 @@ body {
   object-fit: cover;
 }
 .header__right-name {
+  width: fit-content;
+  min-width: 80px;
+  text-align: center;
   font-size: 1.4rem;
   font-weight: 500;
   color: #e4e6eb;
   margin-right: 1rem;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
 }
 .header__right-list {
   display: flex;
@@ -666,16 +674,7 @@ body {
 .blog {
   max-width: 59rem;
   margin: auto;
-}
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .blog {
-    padding: 2rem 0;
-  }
-}
-@media screen and (max-width: 575.98px) {
-  .blog {
-    padding: 2rem 0;
-  }
+  padding: 2rem 0;
 }
 .blog__box-card {
   margin-bottom: 2rem;

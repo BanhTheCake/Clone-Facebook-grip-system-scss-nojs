@@ -10,12 +10,8 @@
 .blog {
     max-width: 59rem;
     margin: auto;
-    @include mobile {
-        padding: 2rem 0;
-    }
-    @include smobile {
-        padding: 2rem 0;
-    }
+    padding: 2rem 0;
+
     &__box-card {
         margin-bottom: 2rem;
         position: relative;
